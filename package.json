@@ -1,0 +1,74 @@
+{
+  "name": "common-login",
+  "version": "1.0.0",
+  "description": "a common login",
+  "scripts": {
+    "dev": "node server.js",
+    "ddl": "webpack --config webpack.ddl.js",
+    "inline": "webpack-dev-server --inline --hot --config webpack.inline.js",
+    "prod": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "webpack",
+    "immutable",
+    "console"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "/issues"
+  },
+  "homepage": "",
+  "dependencies": {
+    "antd": "2.13.6",
+    "babel-polyfill": "6.23.0",
+    "classnames": "2.2.5",
+    "history": "4.6.3",
+    "immutable": "3.8.1",
+    "isomorphic-fetch": "2.2.1",
+    "moment": "2.18.1",
+    "prop-types": "15.6.0",
+    "react": "16.0.0",
+    "react-bootstrap": "0.31.3",
+    "react-dom": "16.0.0",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2",
+    "wj-appcore": "1.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "16.0.10",
+    "@types/react-dom": "16.0.1",
+    "autoprefixer": "7.1.5",
+    "awesome-typescript-loader": "3.2.3",
+    "babel-core": "6.26.0",
+    "babel-eslint": "8.0.1",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "css-loader": "0.28.4",
+    "eslint": "4.9.0",
+    "express": "4.16.2",
+    "extract-text-webpack-plugin": "3.0.1",
+    "file-loader": "0.11.2",
+    "less": "2.7.2",
+    "less-loader": "4.0.4",
+    "moment": "^2.18.1",
+    "node-sass": "4.5.3",
+    "postcss-loader": "2.0.6",
+    "sass-loader": "6.0.6",
+    "style-loader": "0.18.2",
+    "typescript": "2.4.1",
+    "url-loader": "0.5.9",
+    "webpack": "3.8.1",
+    "webpack-dev-middleware": "1.12.0",
+    "webpack-dev-server": "2.8.2",
+    "webpack-hot-middleware": "2.19.1"
+  }
+}
