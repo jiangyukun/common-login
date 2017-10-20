@@ -7,7 +7,7 @@ var express = require('express')
 
 
 var app = new express()
-var port = 3000
+var port = 3070
 
 var compiler = webpack(config)
 

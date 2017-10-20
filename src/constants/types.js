@@ -14,7 +14,8 @@ function generatorValueFromKey(prefix, obj) {
 }
 
 export const APP = {
-  LOGIN: null
+  LOGIN: null,
+  CLEAR_LOGIN_FAILURE_MESSAGE: null
 }
 
 generatorValueFromKey('APP', APP)

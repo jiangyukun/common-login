@@ -12,10 +12,9 @@ import errorMiddleware from './middlewares/handle_error'
 import phaseMiddleware from './middlewares/request_3_phase'
 import * as reducers from './reducers/'
 
-
 const allReducers = combineReducers(reducers)
 
-const store = createStore(allReducers, {}, applyMiddleware(errorMiddleware, phaseMiddleware))
+const store = createStore(allReducers, {}, applyMiddleware(phaseMiddleware))
 
 ReactDOM.render(
   <Provider store={store}>

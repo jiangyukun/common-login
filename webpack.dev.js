@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const handleModulePath = require('./tools/handleModulePath')
 
-const port = 3000
+const port = 3070
 
 module.exports = {
   entry: [
@@ -12,7 +12,11 @@ module.exports = {
   devServer: {
     hot: true,
     inline: true,
-    port: port
+    host: ipAddress,
+    port: port,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -25,9 +29,9 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"dev"'
+      'process.env.NODE_ENV': '"inline"'
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.NamedModulesPlugin()
   ],
   module: {
     loaders: [

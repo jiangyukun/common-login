@@ -3,4 +3,4 @@
  */
 
 
-export const context = '/shell-doctor-web'
+export const context = ''

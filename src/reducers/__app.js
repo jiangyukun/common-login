@@ -2,7 +2,7 @@
  * Created by jiangyukun on 2017/2/14.
  */
 import {fromJS, Map} from 'immutable'
-import * as types from '../constants/types'
+import {APP} from '../constants/types'
 import * as phase from '../constants/phase'
 
 const initValue = {
@@ -17,15 +17,15 @@ export function app(state = initValue, action) {
   function nextState() {
     let nextIState = iState
     switch (action.type) {
-      case types.LOGIN + phase.SUCCESS:
+      case APP.LOGIN + phase.SUCCESS:
         nextIState = loginSuccess()
         break
 
-      case types.LOGIN + phase.FAILURE:
+      case APP.LOGIN + phase.FAILURE:
         nextIState = loginFailure()
         break
 
-      case types.CLEAR_LOGIN_FAILURE_MESSAGE:
+      case APP.CLEAR_LOGIN_FAILURE_MESSAGE:
         nextIState = clearFailureMessage()
         break
     }

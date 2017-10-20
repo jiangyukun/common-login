@@ -27,9 +27,9 @@ class App extends Component {
   componentDidUpdate() {
     if (this.props.app.loginSuccess) {
       if (location.href.indexOf('inline') != -1) {
-        location.href = context + '/inline/doctor-backend'
+        location.href = context + '/inline/question-list'
       } else {
-        location.href = context + '/doctor-backend'
+        location.href = context + '/question-list'
       }
       return
     }
@@ -43,8 +43,8 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-container">
-          <h1 className="app-name">小贝壳医生版</h1>
-          <form className="login-form" autoComplete="false">
+          <h1 className="app-name">CRPF控制台</h1>
+          <form className="login-form" onSubmit={e => e.preventDefault()}>
             <div className="list-group">
               <div className="list-group-item">
                 <input placeholder="用户名" className="form-control" value={this.state.name} onInput={this.handleNameChange}/>
@@ -57,7 +57,7 @@ class App extends Component {
             <button className="btn btn-primary btn-block" onClick={this.login} disabled={!this.state.name || !this.state.pswd}>登录</button>
           </form>
           <div>
-            <p className="copyright">杭州望吉健康科技&copy;2016-2017</p>
+            <p className="copyright">杭州望吉健康科技&copy;2017</p>
           </div>
         </div>
       </div>

@@ -41,10 +41,10 @@ function method(type) {
         })
       }).then(result => {
         try {
-          if (result['statusCode'] == 0) {
+          if (result['code'] == 0) {
             resolve(result['data'])
           } else {
-            reject(result['statusMessage'])
+            reject(result['msg'])
           }
         } catch (err) {
           throw err

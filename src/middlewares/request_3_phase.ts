@@ -15,7 +15,7 @@ export default ({dispatch, getState}) => next => action => {
   const type = threePhase.type
   next({type: type + phase.START})
 
-  threePhase.http(getState()).then(handleResponseData, handleError)
+  threePhase.http(getState()).then(handleResponseData, handleError).catch(handleError)
 
   function getDataReducerNeed(response) {
     if (!threePhase.handleResponse) {

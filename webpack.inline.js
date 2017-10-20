@@ -2,6 +2,9 @@ var path = require('path')
 var webpack = require('webpack')
 process.env.NODE_ENV = 'inline'
 
+const ipAddress = 'localhost'
+const port = 3070
+
 module.exports = [
   {
     entry: [
@@ -10,13 +13,19 @@ module.exports = [
     devServer: {
       hot: true,
       inline: true,
-      progress: true,
-      port: 3040
+      host: ipAddress,
+      port: port,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      }
     },
     output: {
       path: path.join(__dirname, 'dist'),
       filename: 'bundle.js',
-      publicPath: 'http://localhost:3000/static/'
+      publicPath: 'http://localhost:' + port + '/static/'
+    },
+    resolve: {
+      extensions: ['.js', 'jsx', '.ts', '.tsx']
     },
     plugins: [
       new webpack.DefinePlugin({
@@ -26,7 +35,8 @@ module.exports = [
     ],
     module: {
       loaders: [
-        {test: /\.js$/, loaders: ['react-hot-loader', 'babel-loader?cacheDirectory'], exclude: /node_modules/, include: __dirname},
+        {test: /\.(ts|tsx)$/, loader: 'awesome-typescript-loader?useCache '},
+        {test: /\.js$/, loaders: ['babel-loader?cacheDirectory'], exclude: /node_modules/, include: __dirname},
         {test: /\.less$/, loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'less-loader']},
         {test: /\.scss$/, loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader']},
         {test: /\.(jpg|png|svg)$/, loader: 'url-loader?limit=8192'},
